@@ -1,0 +1,6 @@
+deep-learning-from-scratch-master.zip
+MNIST_DATA_LOAD.py
+Untitled.ipynb
+딥러닝_연습1.py
+파일.bat
+파일추출.txt

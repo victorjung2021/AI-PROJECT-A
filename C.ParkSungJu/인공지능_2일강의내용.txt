@@ -1,0 +1,258 @@
+<인공지능 CNN 알고리즘 실습>
+
+1. 아나콘다 설치(설치되신 분들은 설치안하셔도 됩니다.)
+   google.com -> 아나콘다
+   https://www.anaconda.com/products/individual
+   * 설치시 주의사항
+   [V] Add Ananconda3 my PATH enviroment variable
+   위의 부분을 체크해주세요.
+
+2. 아나콘다 계정 만들기
+   [시작] -> Anaconda3 (64-bit) -> Anaconda prompt(Anaconda3)
+   (base) C:\Users...>
+   base는 기본상태 이므로 사용X
+   계정을 생성해서 사용하는게 좋습니다.
+
+   - 계정만들기(p37cnn)
+   (base) C:\Users...>conda create -n p37cnn python=3.7
+   ....
+   Proceed ([y]/n) ? y
+
+3. 아나콘다 계정 사용(활성화)
+   - 계정활성화
+   (base) C:\Users...>conda activate p37cnn
+   (p37cnn) C:\Users...>
+
+4. 인공지능 라이브러리 설치
+   - tensorflow 라이브러리 설치(인공지능 라이브러리)
+   (p37cnn) C:\Users...>pip install tensorflow
+   ...
+   Successfully installed absl-py-1.0.0...
+   (p37cnn) C:\Users...>
+
+   - 인공지능 설계한 화면을 그림으로 표시하는 라이브러리
+   - pydot 라이브러리
+   (p37cnn) C:\Users...>conda install pydot
+   Proceed ([y]/n) y
+   (p37cnn) C:\Users...>
+
+   - 그래프로 정보를 보여주는 라이브러리:그래프라이브러리
+   - matplotlib 라이브러리
+    (p37cnn) C:\Users...>pip install matplotlib
+     ...
+    Successfully installed ...
+   (p37cnn) C:\Users...>
+
+   - 웹브라우져에서 인공지능 개발가능한 개발툴
+   - jupyter
+    (p37cnn) C:\Users...>pip install jupyter
+    ....
+    Successfully installed MarkupSafe-2.1.0...
+
+5. 인공지능 학습할 경로 만들기
+    - 경로 만들기
+    c:\ai_exam <- 폴더 생성
+
+6. CNN프로그램 다운로드(제가 작성한 파일 채팅창에 공유)
+   - ai_exam.zip 압축풀기
+   - 파일을 c:\ai_exam 폴더에 복사
+
+7. 개발 경로로 이동
+   - 경로 복사
+   (p37cnn) C:\Users...>cd C:\ai_exam
+   (p37cnn) C:\ai_exam>
+
+8. CNN 인공지능 동작 실습
+   - 프로그램 실행
+   (p37cnn) C:\ai_exam>jupyter notebook
+
+
+<오후: 티처블머신 사용>
+- google.com -> 티처블머신
+  https://teachablemachine.withgoogle.com/
+
+- class가 총 2개
+  1 클래스 : 스마트폰, 이미지 수는 3개정도
+  2 클래스 : 생수병, 이미지 수는 3개정도
+  => 이미지를 인터넷에서 가져옴(google)
+
+<데이터가져오기 : 크롤링>
+1. 프로그램 다운로드
+  https://url.kr/qjx3ka
+  다운로드
+  다운로드 디렉토리에 web_crawling.zip  파일
+  압축을 해제
+ 
+2. chromedriver.exe 파일 삭제
+
+3. 파일 복사
+  다운로드 web_crawling 폴더를
+  c:\web_crawling 으로 복사
+
+4. chromedriver.exe 최신버젼 다운로드
+   google.com => "크롬드라이버 다운로드"
+   https://chromedriver.chromium.org/downloads
+
+   <버젼확인>
+   ... -> 도움말 -> Chrome 정보
+
+   Chrome이 최신 버전입니다.
+   버전 98.0.4758.102(공식 빌드) (64비트)
+
+   버전에 맞는 경로 클릭
+   chromedriver_win32.zip 파일 다운로드
+   파일 압축해제
+
+   chromedriver.exe 파일을 c:\web_crawling 에 복사
+
+5. 아나콘다 실행하기
+   [시작] -> Anaconda3 (64-bit) -> Anaconda prompt(Anaconda3)
+
+   (base) C:\user...>conda activate p37cnn
+   (p37cnn) C:\user...>
+
+6. 프로그램이 있는 경로로 변경하기
+   (p37cnn) C:\user...>cd c:\web_crawling
+   (p37cnn) c:\web_crawling>
+
+7. 라이브러리 설치
+   - 인터넷에서 정보를 가져올때 사용하는 라이브러리
+   (p37cnn) c:\web_crawling>pip install beautifulsoup4
+   Successfully installed beautifulsoup4-4.10.0 soupsieve-2.3.1
+
+   - 정보를 순서대로 처리하는 라이브러리
+   (p37cnn) c:\web_crawling>pip install selenium
+   Successfully installed async-generator-1.10
+
+   - 인터넷통신 프로토콜 라이브러리
+   (p37cnn) c:\web_crawling>pip install requests
+
+8. 웹크롤링 실행하기
+   (p37cnn) c:\web_crawling>python web.py
+   Image Name : penguin
+   크롬창이 뜨고...
+   FINISH
+  (p37cnn) C:\web_crawling>
+
+9. 동시에 1,000개정도 이미지를 검색하여 다운로드
+   하는 웹크롤링 프로그램
+   https://github.com/YoongiKim/AutoCrawler
+
+<데이터셋 폴더 만들기>
+c:\animal_dataset
+     001_penguin     펭귄
+     002_dog              강아지
+     003_hippo          하마
+     004_walrus        바다코끼리
+     005_cat               고양이
+     006_elephant    코끼리
+     007_fox               여우
+     008_wolf             늑대
+     009_rabbit          토끼
+     010_bear             곰
+
+<연예인에 맞는 동물상 찾기>
+1. 티처블머신 실행
+   google -> 티처블머신
+   https://teachablemachine.withgoogle.com/
+
+2. class를 10개 만들기
+     001_penguin     펭귄
+     002_dog              강아지
+     003_hippo          하마
+     004_walrus        바다코끼리
+     005_cat               고양이
+     006_elephant    코끼리
+     007_fox               여우
+     008_wolf             늑대
+     009_rabbit          토끼
+     010_bear             곰
+
+<키트 동작하기>
+1. 프로그램 다운로드
+   https://url.kr/4smtfu
+   다운로드
+
+2. 압축풀고 폴더 이동
+   aiit_free.zip 압축파일 풀기
+   압축이 풀린 aiit_free 폴더를 c:\aiit_free 로 복사
+
+3. 드라이버 설치 및 확인
+   [시작:마우스 오른쪽]->장치관리자 ->
+   포트(COM & LPT) 클릭
+   USB-SERIAL CH340(COM4) 이 있는지 확인
+
+   * 설치가 안되어있는 경우
+   C:\aiit_free\CH341SER\SETUP.exe 를 실행하고
+   "INSTALL"을 눌러주면 됩니다.
+
+4. 프로그램 실행
+   c:\aiit_free\aiit_free.exe 실행
+   
+   * 경고가 뜨는경우
+   "Windows의 PC보호" 라는 창이 뜨는경우
+   "추가정보" 선택 -> "실행" 해주면 됩니다.
+
+   시간이 조금걸림
+
+   정상적으로 접속
+
+<티처블머신의 학습데이터를 인공지능 프로그램으로
+만드는 방법>
+
+1. 아나콘다 실행
+   [시작] -> Anaconda3 (64-bit) -> Anaconda prompt(Anaconda3)
+   (base) C:\Users...>
+
+2. p37cnn 계정으로 로그인
+   (base) C:\Users...>conda activate p37cnn
+   (p37cnn) C:\Users...>
+
+3. 경로를 ai_exam 경로로 변경
+   (p37cnn) C:\Users...>cd C:\ai_exam
+   (p37cnn) C:\ai_exam>jupyter notebook
+
+4. 티처블머신 학습데이터 불러오는 프로그램 제작
+    - 학습결과 데이터 파일을 c:\ai_exam에 복사
+
+      다운로드 디렉토리에 "converted_keras" 디렉토리에
+      keras_model.h5 파일을 c:\ai_exam에 복사
+
+      파일명 : tm_run
+
+    - 라이브러리 불러오기
+from keras.models import load_model
+from PIL import Image, ImageOps
+import numpy as np
+    
+    - 학습데이터 불러오기
+# Load the model
+model = load_model('keras_model.h5')
+
+     - cat.jpg 파일을 c:\ai_exam 에 복사
+
+     - cat.jpg 파일 불러오기
+data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
+image = Image.open('cat.jpg')
+size = (224, 224)
+image = ImageOps.fit(image, size, Image.ANTIALIAS)
+
+     - 데이터 전처리
+image_array = np.asarray(image)
+normalized_image_array = (image_array.astype(np.float32) / 127.0) - 1
+data[0] = normalized_image_array
+
+     - 예측(predict) 하기
+prediction = model.predict(data)
+print(prediction)
+
+     - 가장 높은 숫자의 인덱스
+result = np.argmax(prediction)
+print( "result = %d" % (result))
+
+
+
+
+
+
+

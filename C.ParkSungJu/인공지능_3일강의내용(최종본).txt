@@ -1,0 +1,104 @@
+<자주 사용되는 용어>
+dlib : 사람의 얼굴을 인식하기 위한 랜드마크(landmark)를 찾아내는 라이브러리
+       5p, 68p 2개로 구분하여 사람의 얼굴을 인식한다.
+Pretrained Model : 소스를 공개한 개발자가 인공지능을 학습시켜놓은 최종 학습된 결과파일
+checkpoint : 인공지능이 학습이에 가장 좋은 점수가 나왔던 상태를 임시로 저장하는 파일
+전처리 : 인공지능이 학습하기 용이하도록 동일한 조건을 만들어놓은 상태
+
+<BEAUTYGAN 인공지능 실습>
+0. 개발환경 설정
+[*] 소스코드 : https://github.com/kairess/BeautyGAN
+[*] 아나콘다 ID : p36t19_beauty
+[*] python : 3.6
+[*] tensorflow : 1.9
+[*] jupyter 설치
+[*] 기타라이브러리 설치하기
+    [*] matplotlib 라이브러리
+    [*] dlib 라이브러리
+[*] 개발작업경로 : C:\ai_exam\beautyGAN
+[*] 훈련모델받기
+
+1. 개발환경 구축(아나콘다)
+   [시작] - anaconda3(64-bit) - anaconda prompt(anaconda3)
+   (base) C:..>
+   * 아나콘다 사용자 만들기(p36t19_beauty)
+   (base) C:..>conda create -n p36t19_beauty python=3.6
+
+  wincertstore       pkgs/main/win-64::wincertstore-0.2-py36h7fe50ca_0
+  Proceed ([y]/n)? y
+
+2. 아나콘다 사용자로 로그인(p36t19_beauty)
+   (base) C:..>conda activate p36t19_beauty
+   (p36t19_beauty) C:..>
+
+3. tensorflow 설치하기( 1.9 버젼 설치 )
+   * tensorflow에서 원하는 버젼을 설치하고 싶은경우 ==
+   (p36t19_beauty) C:..>pip install tensorflow==1.9
+
+   ....
+   Successfully installed absl-py-1.0.0
+   (p36t19_beauty) C:..>
+
+4. jupyter 설치(인공지능 개발프로그램)
+   (p36t19_beauty) C:..>pip install jupyter
+   ...
+   Successfully installed MarkupSafe-2.0.1
+   (p36t19_beauty) C:..>
+
+5. matplotlib(그래픽라이브러리) 설치
+   (p36t19_beauty) C:..>pip install matplotlib
+   ...
+   Successfully installed cycler-0.11.0
+   (p36t19_beauty) C:..>
+
+6. dlib(얼굴인식 라이브러리) 설치
+   * cmake 파일은 먼저 설치
+   (p36t19_beauty) C:..>pip install cmake
+   ...
+   Successfully installed cmake-3.22.2
+   (p36t19_beauty) C:..>
+
+   * dlib 라이브러리 설치
+   (p36t19_beauty) C:..>conda install -c conda-forge dlib
+   ...
+   Proceed ([y]/n)? y
+
+   Preparing transaction: done
+   Verifying transaction: done
+   Executing transaction: done
+   (p36t19_beauty) C:..>
+
+7. 인공지능 학습 폴더 생성
+    C:\ai_exam\beautyGAN 폴더 생성
+
+8. 소스코드 다운로드
+   https://github.com/kairess/BeautyGAN
+   들어가시면 "code->Download ZIP" 으로 다운로드
+
+   BeautyGAN-master.zip 파일이 다운로드 됨
+
+   압축풀어서 파일을
+   C:\ai_exam\beautyGAN 에 복사
+
+9. 훈련 데이터파일 받기(pretrained model 다운로드)
+   파일받는 위치
+   https://drive.google.com/drive/folders/1pgVqnF2-rnOxcUQ3SO4JwHUFTdiSe5t9
+
+   총 4개파일 다운로드
+   checkpoint
+   model.data-00000-of-00001
+   model.index
+   model.meta
+
+   받은파일 4개를
+   C:\ai_exam\beautyGAN\models
+   에 복사하시면 완료됨.
+
+10. 주피터를 실행하기 위해서는 개발경로로 변경
+   (p36t19_beauty) C:\..>cd C:\ai_exam\beautyGAN
+   (p36t19_beauty) C:\ai_exam\beautyGAN>
+   C:\ai_exam\beautyGAN>jupyter notebook
+
+   test.ipynb 파일을 열어주세요.
+
+
